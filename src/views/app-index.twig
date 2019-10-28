@@ -1,0 +1,29 @@
+{% extends "_common/layout.twig" %}
+
+{% block mainContent %}
+    <main class="container">
+        <div class="row _align-items-stretch pb-5 pt-lg-5">
+            <div class="col-lg-1 bg-gray-200">{% include '_partials/about.twig' %}</div>
+            <div class="col-lg-3">
+                <div class="px-lg-5 pb-4">
+                    <section class="resume__section resume__section--skills">
+                        <h2 class="resume__section-title">Compétences</h2>
+                        <div class="resume__section-body">{% include '_partials/skills.twig' %}</div>
+                    </section>
+                    <section class="resume__section resume__section--experience">
+                        <h2 class="resume__section-title">Expérience</h2>
+                        <div class="resume__section-body">
+                            {% include '_partials/experiences.twig' %}
+                        </div>
+                    </section>
+                    <section class="resume__section resume__section--studies">
+                        <h2 class="resume__section-title">Etudes</h2>
+                        <div class="resume__section-body">
+                            {%  include '_partials/studies.twig' %}
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock mainContent %}

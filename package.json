@@ -1,0 +1,68 @@
+{
+  "name": "frontenderie",
+  "version": "0.0.2",
+  "description": "Complete suite to build full or partial web assets",
+  "main": "gulpfile.babel.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jlo",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/register": "^7.6.2",
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.0",
+    "browserify-shim": "^3.8.14",
+    "del": "^5.1.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "latest",
+    "gulp-buffer": "0.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-flatten": "^0.4.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^6.1.1",
+    "gulp-noop": "^1.0.0",
+    "gulp-plumber": "latest",
+    "gulp-sass": "~4.0.2",
+    "gulp-sass-lint": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-svgo": "^2.1.1",
+    "gulp-svgstore": "^7.0.1",
+    "gulp-tap": "^2.0.0",
+    "gulp-twig": "~1.2.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uncss": "^1.0.6",
+    "gulp-watch": "^5.0.1",
+    "through2": "^3.0.1",
+    "yargs": "^14.2.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "devicon": "^2.2.0",
+    "jquery": "^3.4.1",
+    "lazysizes": "^5.1.2",
+    "popper.js": "^1.16.0",
+    "zepto": "^1.2.0"
+  },
+  "browserify-shim": {
+    "jquery": "jQuery"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 1 major version",
+    "not dead",
+    "Chrome >= 60",
+    "Firefox >= 60",
+    "Edge >= 15.15063",
+    "Explorer 11",
+    "iOS >= 10",
+    "Safari >= 10",
+    "Android >= 6",
+    "not ExplorerMobile <= 11"
+  ]
+}

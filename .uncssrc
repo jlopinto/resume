@@ -1,0 +1,12 @@
+{
+  "banner": false,
+  "html": [
+    "dist/*.html"
+  ],
+  "ignore": [
+    ".fade",
+    ".show",
+    "/^.bs-/",
+    "/^.tooltip/"
+  ]
+}
