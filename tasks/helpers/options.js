@@ -16,7 +16,7 @@ module.exports = {
       data: './src/datas/**/*.json'
     },
     dist: {
-      views: './dist/',
+      views: './',
       index: './dist/',
       styles: './dist/styles/',
       scripts: './dist/scripts/',
