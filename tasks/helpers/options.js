@@ -18,8 +18,8 @@ module.exports = {
     dist: {
       views: './',
       index: './dist/',
-      styles: './dist/styles/',
-      scripts: './dist/scripts/',
+      styles: './dist/',
+      scripts: './dist/',
       images: './dist/images/',
       fonts: './dist/fonts/',
       data: './dist/datas/'

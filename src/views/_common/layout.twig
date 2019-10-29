@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="fr">
+<html lang="fr">
     <head>
         {% block head %}
             <meta charset="utf-8"/>
@@ -10,9 +10,8 @@
             <link href="dist/apple-touch-icon.png" rel="apple-touch-icon"/>
             <link rel="preload" href="https://fonts.googleapis.com/css?family=Livvic%3A300%2C400%2C500%2C600%2C700%7CRaleway%3A300%2C400%2C500%2C600%2C700%26display%3Dswap" as="style">
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Livvic%3A300%2C400%2C500%2C600%2C700%7CRaleway%3A300%2C400%2C500%2C600%2C700%26display%3Dswap">
-            <link rel="preload" href="dist/styles/main.css" as="style">
-            <link rel="stylesheet" href="dist/styles/main.css" media="all">
-
+            <link rel="preload" href="dist/styles.css" as="style">
+            <link rel="stylesheet" href="dist/styles.css" media="all">
         {% endblock %}
     </head>
     <body>
@@ -28,7 +27,7 @@
             {% endblock %}
         </div>
         {% block scripts %}
-            <script src="dist/scripts/main.js"></script>
+            <!-- <script src="dist/main.js"></script> -->
         {% endblock %}
     </body>
 </html>
