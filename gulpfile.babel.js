@@ -1,5 +1,6 @@
 import gulp from 'gulp';
-
+import { argv } from 'yargs';
+const { production } = argv;
 import scriptsLint from './tasks/scripts-lint';
 import stylesLint from './tasks/styles-lint';
 import scriptsbundler from './tasks/scripts';
@@ -18,7 +19,7 @@ gulp.task('copy:misc', copyMiscs);
 gulp.task('copy:fonts', copyFonts);
 
 gulp.task('sprite:svg', svgSprite);
-gulp.task('image', imgOpti);
+gulp.task('images', imgOpti);
 
 gulp.task('lint:scripts', scriptsLint);
 gulp.task('lint:styles', stylesLint);
@@ -29,19 +30,14 @@ gulp.task('uncss', uncss);
 
 gulp.task('html', htmlbundler);
 gulp.task('clean', clean);
+gulp.task('uncss', uncss);
 
-gulp.task(
-  'default',
-  gulp.series(
-    'clean',
-    gulp.parallel(
-      'copy:misc',
-      'copy:fonts',
-      'image',
-      'sprite:svg',
-      'scripts'),
-    'html',
-    'styles')
+gulp.task('default', gulp.series(
+  'clean',
+  gulp.parallel('copy:misc', 'copy:fonts', 'images', 'sprite:svg', 'scripts'),
+  'html',
+  'styles',
+  'uncss')
 );
 
 gulp.task('w', gulp.series('default', watch));
