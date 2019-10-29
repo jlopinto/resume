@@ -4,7 +4,8 @@
   "description": "Complete suite to build full or partial web assets",
   "main": "gulpfile.babel.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gulp w",
+    "prod": "gulp --production"
   },
   "author": "Jlo",
   "license": "BSD-2-Clause",
@@ -34,6 +35,7 @@
     "gulp-svgo": "^2.1.1",
     "gulp-svgstore": "^7.0.1",
     "gulp-tap": "^2.0.0",
+    "gulp-total-task-time": "^0.1.0",
     "gulp-twig": "~1.2.0",
     "gulp-uglify": "^3.0.2",
     "gulp-uncss": "^1.0.6",
@@ -51,6 +53,11 @@
   },
   "browserify-shim": {
     "jquery": "jQuery"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
   },
   "browserslist": [
     "> 1%",

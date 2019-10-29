@@ -2,24 +2,23 @@
   @return map-get($spacers, $key);
 }
 
-body {
-  transition: opacity 0.2s ease-in;
-  background-color: $gray-100;
-  opacity: 1;
-  color: red;
-}
-
-h3 {
-  font-weight: 600;
-}
-
 .outline {
   outline: 1px solid red;
   outline-offset: -1px;
 }
 
-.bg-gray-200 {
-  background-color: $gray-200;
+:root {
+  --dark: #{$gray-900};
+  --accent: #{$gray-200};
+  --light: #{$gray-100};
+  --interactive: #{$blue};
+
+  @media (prefers-color-scheme: dark) {
+    --dark: #{$gray-100};
+    --accent: #{$gray-800};
+    --light: #{$gray-700};
+    --interactive: #{$orange};
+  }
 }
 
 .column-2 {
@@ -29,9 +28,20 @@ h3 {
     break-inside: avoid;
   }
 }
-.column-lg-0 {
-  @include media-breakpoint-up(lg) {
-    columns: unset;
+
+body {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+a {
+  color: var(--interactive);
+  text-decoration: $link-decoration;
+  background-color: transparent;
+
+  @include hover {
+    color: var(--interactive);
+    text-decoration: $link-hover-decoration;
   }
 }
 
@@ -41,21 +51,31 @@ h3 {
   vertical-align: middle;
 }
 
-body {
-  background-color: $gray-400;
-  color: $body-color;
-  // @media (prefers-color-scheme: dark) {
-  //   background: $body-color;
-  //   color: $gray-400;
-  // }
+.bg--accent {
+  background-color: var(--accent);
 }
 
-.resume {
-  background: $gray-100;
-  position: relative;
+.br--accent {
+  @include media-breakpoint-up(lg) {
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      background-color: var(--accent);
+      top: 0;
+      bottom: 0;
+      right: 0;
+    }
+  }
 }
 
-.resume__header {
+// .resume__header {
+//   background-color: var(--accent);
+// }
+
+.resume__header-inner {
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -70,7 +90,6 @@ body {
 
 .resume__header-cv {
   @include font-size(10);
-
   letter-spacing: 0.25em;
 }
 .resume__header-who {
@@ -89,7 +108,6 @@ body {
 }
 
 .resume__section-title {
-  position: relative;
   text-transform: uppercase;
   padding-top: spacer(4);
   padding-bottom: spacer(2);
@@ -118,10 +136,12 @@ body {
     margin-top: spacer(4);
   }
 }
+
 .resume__item-title {
   font-size: 1.25em;
   padding-top: 0;
   padding-bottom: spacer(1);
+  font-weight: 600;
 }
 
 p:last-child {
@@ -142,14 +162,13 @@ a {
 }
 
 .resume__item-date {
-  position: relative;
   padding-bottom: spacer(2);
   margin-bottom: spacer(2);
-  border-bottom: 1px solid $gray-200;
+  border-bottom: 1px solid var(--accent);
+
   @include media-breakpoint-up(lg) {
     text-align: right;
     height: 100%;
-    border-right: 1px solid $gray-200;
     border-bottom: 0;
     margin-bottom: 0;
     padding-bottom: 0;

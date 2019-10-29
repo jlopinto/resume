@@ -6,14 +6,11 @@ import uncss from 'gulp-uncss';
 
 const { production } = argv;
 
-
-
 export default () => {
-  console.log(`${conf.paths.dist.views}app-index.html`);
   return gulp
-  .src(`${conf.paths.dist.styles}main.css`)
-  .pipe(uncss({
-    html: [`${conf.paths.dist.views}app-index.html`]
-  }))
-  .pipe(gulp.dest(`${conf.paths.dist.styles}main.uncss.css`));
+    .src(`${conf.paths.dist.styles}main.css`)
+    .pipe(uncss({
+      html: [`${conf.paths.dist.views}app-index.html`]
+    }))
+    .pipe(gulp.dest(`${conf.paths.dist.styles}main.uncss.css`));
 }

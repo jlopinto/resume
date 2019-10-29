@@ -1,4 +1,6 @@
 import gulp from 'gulp';
+import taskTime from 'gulp-total-task-time';
+taskTime.init();
 
 import scriptsLint from './tasks/scripts-lint';
 import stylesLint from './tasks/styles-lint';
@@ -11,7 +13,7 @@ import copyMiscs from './tasks/copy-misc';
 import copyFonts from './tasks/copy-fonts';
 import svgSprite from './tasks/svg-sprite';
 import imgOpti from './tasks/img-opti';
-import uncss from './tasks/uncss';
+// import uncss from './tasks/uncss';
 
 // Single tasks
 gulp.task('copy:misc', copyMiscs);
@@ -25,14 +27,23 @@ gulp.task('lint:styles', stylesLint);
 
 gulp.task('scripts', scriptsbundler);
 gulp.task('styles', stylesbundler);
-gulp.task('uncss', uncss);
+// gulp.task('uncss', uncss);
 
 gulp.task('html', htmlbundler);
 gulp.task('clean', clean);
 
 gulp.task(
   'default',
-  gulp.series('clean', gulp.series(gulp.parallel('copy:misc', 'copy:fonts', 'image', 'sprite:svg', 'scripts')), 'html', 'styles')
+  gulp.series(
+    'clean',
+    gulp.parallel(
+      'copy:misc',
+      'copy:fonts',
+      'image',
+      'sprite:svg',
+      'scripts'),
+    'html',
+    'styles')
 );
 
 gulp.task('w', gulp.series('default', watch));

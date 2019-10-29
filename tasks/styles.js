@@ -6,7 +6,7 @@ import uncss from 'gulp-uncss';
 import sourcemaps from 'gulp-sourcemaps';
 import { argv } from 'yargs';
 import conf from './helpers/options';
-import { noop, onErrorHandler } from './helpers/tools';
+import { noop } from './helpers/tools';
 
 
 const { production } = argv;
@@ -16,7 +16,7 @@ const styleBundler = () => gulp
   .pipe(!production ? sourcemaps.init() : noop())
   .pipe(sass({ precision: 8 }).on('error', sass.logError))
   .pipe(autoprefixer())
-  .pipe(uncss({ uncssrc:'.uncssrc'}))
+  .pipe(!production ? noop() : uncss({ uncssrc: conf.modules.uncss.configFile }))
   .pipe(!production ? noop() : cleanCss({
     specialComments: 'all'
   }))

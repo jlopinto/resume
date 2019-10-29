@@ -1,7 +1,8 @@
 module.exports = {
   modules: {
-    scsslint: { configFile: './.scsslint.yml' },
-    eslint: { configFile: './.eslintrc.json' },
+    scsslint: { configFile: './src/styles/.scsslint.yml' },
+    uncss: { configFile: './src/styles/.uncssrc' },
+    eslint: { configFile: './src/scripts/.eslintrc.json' }
   },
   paths: {
     src: {
