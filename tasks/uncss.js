@@ -13,6 +13,7 @@ export default (cb) => {
   return gulp
     .src(`${conf.paths.dist.styles}main.css`)
     .pipe(uncss({
+      uncssrc: conf.modules.uncss.configFile,
       html: [`${conf.paths.dist.views}index.html`]
     }))
     .pipe(gulp.dest(`${conf.paths.dist.styles}`));
