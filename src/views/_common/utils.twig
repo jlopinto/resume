@@ -1,8 +1,8 @@
 {% macro svgIcon(name, title, classes) %}
-    <div class="icon embed-responsive embed-responsive-1by1 {{classes}}" title="{{title}}">
-        <svg class="embed-responsive-item" role="img" title="{{title}}" data-toggle="tooltip">
+    <span class="icon embed-responsive embed-responsive-1by1 {{classes}}" title="{{title}}" data-toggle="tooltip">
+        <svg class="embed-responsive-item" role="img">
             <title>{{title}}</title>
             <use xlink:href="#{{name}}" aria-hidden="true"></use>
         </svg>
-    </div>
+    </span>
 {% endmacro %}
